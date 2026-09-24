@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Journal B&S — Trade Smarter. Not Harder.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="1" y="1" width="20" height="20" rx="5" stroke="#00ffc8" stroke-width="1.5"/>
+          <path d="M6 15 L9 9 L11 13 L13 10 L16 15" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>Trade Journal <strong>B&S</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#download" class="nav-cta">Download</a></li>
+      </ul>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#features">Features</a>
+      <a href="#journal">Journal</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#download">Download</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content reveal">
+      <p class="hero-eyebrow">Trade Journal B&S</p>
+      <h1 class="hero-title">Trade smarter.<br><span class="accent">Not harder.</span></h1>
+      <p class="hero-sub">The complete trading companion for serious traders. Track your risk, journal every trade, and learn from every session — all offline, all yours.</p>
+      <div class="hero-actions">
+        <a href="#download" class="btn-primary">Download for Windows</a>
+        <a href="#features" class="btn-ghost">See features ↓</a>
+      </div>
+    </div>
+    <div class="hero-mockup reveal reveal-delay">
+      <div class="app-window">
+        <div class="app-titlebar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="app-titlebar-name">Trade Journal B&S</span>
+        </div>
+        <div class="app-body">
+          <div class="app-sidebar">
+            <div class="sidebar-item active">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="3" stroke="#00ffc8" stroke-width="1.2"/><path d="M4 11 L6 7 L8 9.5 L10 6 L12 11" stroke="#00ffc8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Home</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6.5" height="6.5" rx="1.5" stroke="#888" stroke-width="1.2"/><rect x="8.5" y="1" width="6.5" height="6.5" rx="1.5" stroke="#888" stroke-width="1.2"/><rect x="1" y="8.5" width="6.5" height="6.5" rx="1.5" stroke="#888" stroke-width="1.2"/><rect x="8.5" y="8.5" width="6.5" height="6.5" rx="1.5" stroke="#888" stroke-width="1.2"/></svg>
+              <span>Journal</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span>Notes</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#888" stroke-width="1.2"/><path d="M8 5v3l2 2" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span>History</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v5l3 1.5" stroke="#888" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="9" r="5.5" stroke="#888" stroke-width="1.2"/></svg>
+              <span>Learn</span>
+            </div>
+          </div>
+          <div class="app-main">
+            <div class="app-card">
+              <div class="app-card-label">Current Risk</div>
+              <div class="app-card-value teal" id="riskAnim">1.25%</div>
+              <div class="app-card-sub">Cycle 3 of 4 · 2 wins streak</div>
+            </div>
+            <div class="app-card-row">
+              <div class="app-mini-card win">WIN <span>+0.25%</span></div>
+              <div class="app-mini-card loss">LOSS <span>-0.25%</span></div>
+            </div>
+            <div class="app-chart">
+              <svg width="100%" height="60" viewBox="0 0 200 60" preserveAspectRatio="none">
+                <polyline points="0,50 25,45 50,30 75,35 100,20 125,25 150,10 175,15 200,8" fill="none" stroke="#00ffc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="0,50 25,45 50,30 75,35 100,20 125,25 150,10 175,15 200,8 200,60 0,60" fill="url(#chartGrad)" stroke="none"/>
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#00ffc8" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#00ffc8" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat reveal">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Screens & Tools</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat reveal">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Offline & Private</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat reveal">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Accounts & Strategies</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat reveal">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Subscriptions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: RISK MANAGEMENT -->
+  <section class="feature-section dark" id="features">
+    <div class="feature-inner reverse">
+      <div class="feature-text reveal">
+        <p class="feature-eyebrow">Risk Management</p>
+        <h2 class="feature-title">Know exactly<br>how much to risk.</h2>
+        <p class="feature-body">B&S calculates your optimal risk percentage dynamically. Win streaks step your risk up. A loss steps it back down. Two consecutive losses? The app tells you to stop, rest, and come back tomorrow.</p>
+        <ul class="feature-list">
+          <li>Starts at 0.5% or 0.75% of balance</li>
+          <li>Auto-steps +0.25% per win cycle</li>
+          <li>Hard cap at 3.0% — always protected</li>
+          <li>Consecutive loss warning system</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal reveal-delay">
+        <div class="mockup-card dark-card">
+          <div class="mock-label">Money Manager</div>
+          <div class="mock-risk-display">
+            <span class="mock-risk-num">1.75<span class="mock-risk-pct">%</span></span>
+            <span class="mock-risk-desc">Current Risk · Cycle 5</span>
+          </div>
+          <div class="mock-buttons">
+            <button class="mock-btn win-btn">✓ Win</button>
+            <button class="mock-btn loss-btn">✕ Loss</button>
+          </div>
+          <div class="mock-steps">
+            <div class="mock-step filled"></div>
+            <div class="mock-step filled"></div>
+            <div class="mock-step filled"></div>
+            <div class="mock-step filled"></div>
+            <div class="mock-step"></div>
+          </div>
+          <div class="mock-alert">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#00ffc8" stroke-width="1.2"/><path d="M7 4v3M7 9.5v.5" stroke="#00ffc8" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Step up unlocked at 4 wins
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: JOURNAL -->
+  <section class="feature-section light" id="journal">
+    <div class="feature-inner">
+      <div class="feature-text reveal">
+        <p class="feature-eyebrow">Trading Journal</p>
+        <h2 class="feature-title">Every trade.<br>Every detail.</h2>
+        <p class="feature-body">Log trades across multiple accounts. Attach screenshots directly from your clipboard. Export any account's full history to Excel with one click.</p>
+        <ul class="feature-list dark-list">
+          <li>Multiple independent trading accounts</li>
+          <li>Paste screenshots with Ctrl+V</li>
+          <li>Drag & drop photo attachments</li>
+          <li>Export to .xlsx — filtered by strategy</li>
+          <li>Post-trade balance tracking</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal reveal-delay">
+        <div class="mockup-journal">
+          <div class="journal-header">
+            <span class="journal-title">Account: 3171541</span>
+            <span class="journal-badge">Pro BTB</span>
+          </div>
+          <div class="journal-table">
+            <div class="journal-row header-row">
+              <span>Date</span><span>Strategy</span><span>Balance</span><span>Photo</span>
+            </div>
+            <div class="journal-row">
+              <span>Sep 24</span><span>Pro BTB</span><span class="green-text">$1,042</span>
+              <span class="photo-thumb"></span>
+            </div>
+            <div class="journal-row">
+              <span>Sep 23</span><span>Pro BTB</span><span class="red-text">$1,018</span>
+              <span class="photo-thumb"></span>
+            </div>
+            <div class="journal-row">
+              <span>Sep 22</span><span>Scalp</span><span class="green-text">$1,030</span>
+              <span class="photo-thumb"></span>
+            </div>
+          </div>
+          <div class="journal-footer">
+            <div class="paste-zone">📋 Paste screenshot here (Ctrl+V)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE: STRATEGY -->
+  <section class="feature-section dark" id="strategy">
+    <div class="feature-inner reverse">
+      <div class="feature-text reveal">
+        <p class="feature-eyebrow">Strategy Builder</p>
+        <h2 class="feature-title">Build your own<br>trade checklist.</h2>
+        <p class="feature-body">Define custom strategies with your own fields. Each field can be free text or a dropdown with preset options. Reorder, edit, and delete fields anytime.</p>
+        <ul class="feature-list">
+          <li>Unlimited named strategies</li>
+          <li>Custom text and dropdown fields</li>
+          <li>Drag to reorder field priority</li>
+          <li>Per-strategy trade logging</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal reveal-delay">
+        <div class="mockup-card dark-card strategy-card">
+          <div class="mock-label">Strategy: Pro BTB</div>
+          <div class="strategy-fields">
+            <div class="s-field">
+              <span class="s-field-label">Back Context</span>
+              <div class="s-field-value select-type">
+                <span>Spike Up</span>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="s-field">
+              <span class="s-field-label">Entry Type</span>
+              <div class="s-field-value select-type">
+                <span>Break &amp; Retest</span>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="s-field">
+              <span class="s-field-label">Timeframe</span>
+              <div class="s-field-value text-type"><span>M15</span></div>
+            </div>
+            <div class="s-field">
+              <span class="s-field-label">Confluence</span>
+              <div class="s-field-value text-type"><span>Strong S/R level</span></div>
+            </div>
+          </div>
+          <div class="add-field-btn">+ Add Field</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID -->
+  <section class="feature-grid-section light">
+    <div class="section-center">
+      <p class="section-eyebrow reveal">Everything you need</p>
+      <h2 class="section-title reveal">Built for traders<br>who take it seriously.</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20 L8 12 L12 16 L16 8 L20 14 L24 6" stroke="#00ffc8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Risk Calculator</h3>
+        <p>Dynamic risk steps up with wins and down with losses. Keeps you disciplined automatically.</p>
+      </div>
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="9" height="9" rx="2" stroke="#00ffc8" stroke-width="1.8"/><rect x="16" y="3" width="9" height="9" rx="2" stroke="#00ffc8" stroke-width="1.8"/><rect x="3" y="16" width="9" height="9" rx="2" stroke="#00ffc8" stroke-width="1.8"/><rect x="16" y="16" width="9" height="9" rx="2" stroke="#00ffc8" stroke-width="1.8"/></svg>
+        </div>
+        <h3>Multi-Account</h3>
+        <p>Manage multiple trading accounts independently with separate histories and strategies.</p>
+      </div>
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="4" width="18" height="20" rx="3" stroke="#00ffc8" stroke-width="1.8"/><path d="M9 10h10M9 14h7M9 18h5" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Smart Notes</h3>
+        <p>Separate notepads for capital rules, risk management, and your emotional state as a trader.</p>
+      </div>
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="3" stroke="#00ffc8" stroke-width="1.8"/><path d="M8 11h5M8 15h8" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round"/><circle cx="19" cy="13" r="3" stroke="#00ffc8" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Learn Gallery</h3>
+        <p>Upload chart screenshots with notes. Build your personal visual trading library over time.</p>
+      </div>
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 5v12M9 12l5 5 5-5" stroke="#00ffc8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h18" stroke="#00ffc8" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Excel Export</h3>
+        <p>Export any account's full trade log to a formatted .xlsx file, filtered by strategy.</p>
+      </div>
+      <div class="fg-card reveal">
+        <div class="fg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#00ffc8" stroke-width="1.8"/><path d="M14 9v5l3 3" stroke="#00ffc8" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Full Backup</h3>
+        <p>Download a complete ZIP backup of all your data anytime. Restore with one click.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARN SECTION -->
+  <section class="feature-section dark learn-section">
+    <div class="feature-inner">
+      <div class="feature-text reveal">
+        <p class="feature-eyebrow">Learn</p>
+        <h2 class="feature-title">Your personal<br>trading library.</h2>
+        <p class="feature-body">Capture chart setups and lessons the moment you see them. Paste from clipboard, upload a file, or drag and drop. Every post is timestamped and sortable.</p>
+        <ul class="feature-list">
+          <li>Ctrl+V clipboard paste support</li>
+          <li>Sort newest or oldest first</li>
+          <li>Descriptions with each image</li>
+          <li>Stored locally — always available</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal reveal-delay">
+        <div class="learn-mockup">
+          <div class="learn-top-bar">
+            <span>Learn</span>
+            <div class="learn-controls">
+              <span class="learn-sort">Newest ▾</span>
+              <span class="learn-add">+ New Post</span>
+            </div>
+          </div>
+          <div class="learn-grid">
+            <div class="learn-card">
+              <div class="learn-img-placeholder">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="20" rx="3" stroke="#00ffc8" stroke-width="1.5"/><circle cx="10" cy="13" r="2.5" stroke="#00ffc8" stroke-width="1.5"/><path d="M2 22l7-6 5 5 4-4 6 6" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="learn-desc">Clean B&R on M15 with strong confluence</p>
+              <span class="learn-ts">Sep 24, 2026</span>
+            </div>
+            <div class="learn-card">
+              <div class="learn-img-placeholder">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="20" rx="3" stroke="#555" stroke-width="1.5"/><circle cx="10" cy="13" r="2.5" stroke="#555" stroke-width="1.5"/><path d="M2 22l7-6 5 5 4-4 6 6" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="learn-desc">Spike reversal setup — avoid these entries</p>
+              <span class="learn-ts">Sep 22, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY SECTION -->
+  <section class="privacy-section light" id="privacy">
+    <div class="section-center">
+      <div class="privacy-icon reveal">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><path d="M28 6L8 14v14c0 12 8.5 23.2 20 26 11.5-2.8 20-14 20-26V14L28 6z" stroke="#1d1d1f" stroke-width="2" fill="none"/><path d="M20 28l5 5 11-11" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="section-title reveal">Your data stays<br>on your machine.</h2>
+      <p class="section-sub reveal">Trade Journal B&S runs entirely offline. No cloud, no accounts, no subscriptions. Your trades, notes, and strategies are stored locally on your PC — always accessible, always private.</p>
+      <div class="privacy-cards">
+        <div class="privacy-card reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 6.5v7C4 18.1 7.5 22.4 12 24c4.5-1.6 8-5.9 8-10.5v-7L12 3z" stroke="#1d1d1f" stroke-width="1.5"/></svg>
+          <span>Password protected</span>
+        </div>
+        <div class="privacy-card reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#1d1d1f" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>No internet required</span>
+        </div>
+        <div class="privacy-card reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v8M9 10l3 3 3-3" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 17h14" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Full backup & restore</span>
+        </div>
+        <div class="privacy-card reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1d1d1f" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Zero subscriptions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD CTA -->
+  <section class="download-section" id="download">
+    <div class="download-inner reveal">
+      <p class="download-eyebrow">Available now · Windows</p>
+      <h2 class="download-title">Start your first<br>trade journal today.</h2>
+      <p class="download-sub">Free. Offline. No sign-up required.</p>
+      <a href="https://github.com/aradcodeeew/Trading-B-S/releases/download/tradeappv1.5/TradingAppSetup.exe" class="btn-primary large">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14h12" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Download for Windows
+      </a>
+      <p class="download-note">Windows 10 / 11 · 64-bit · © 2026 B&S</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner reveal">
+      <p class="contact-eyebrow">Get in touch</p>
+      <h2 class="contact-title">Connect with us</h2>
+      <div class="contact-cards">
+        <a href="https://instagram.com/arady.pv" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon ig-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.7"/>
+              <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.7"/>
+              <circle cx="17.5" cy="6.5" r="1.1" fill="white"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-platform">Instagram</span>
+            <span class="contact-handle">@arady.pv</span>
+          </div>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8M9 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://t.me/aradyi" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon tg-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M21 5L2 12.5l7 1M21 5l-5 14-7-6.5M21 5L9 13.5m0 0V19l3.5-3" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-platform">Telegram</span>
+            <span class="contact-handle">@aradyi</span>
+          </div>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8M9 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none"><rect x="1" y="1" width="20" height="20" rx="5" stroke="#00ffc8" stroke-width="1.5"/><path d="M6 15 L9 9 L11 13 L13 10 L16 15" stroke="#00ffc8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <span>Trade Journal <strong>B&S</strong></span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#features">Features</a>
+        <a href="#journal">Journal</a>
+        <a href="#strategy">Strategy</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#download">Download</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 B&S. All rights reserved. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
