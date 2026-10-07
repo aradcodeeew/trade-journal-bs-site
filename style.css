@@ -351,6 +351,47 @@ body {
   margin-top: 4px;
 }
 
+/* Consecutive wins row */
+.app-consec-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,255,200,0.05);
+  border: 1px solid rgba(0,255,200,0.12);
+  border-radius: 8px;
+  padding: 7px 10px;
+  margin-bottom: 2px;
+}
+.app-consec-label {
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.app-consec-dots {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+.consec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.consec-dot.win-dot.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: 0 0 6px rgba(0,255,200,0.5);
+}
+.app-consec-badge {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
 .app-card-row {
   display: flex;
   gap: 8px;
@@ -995,10 +1036,49 @@ body {
   margin-bottom: 40px;
 }
 
+.download-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-primary.btn-android {
+  background: #1c9b68;
+  box-shadow: 0 4px 20px rgba(28,155,104,0.3);
+}
+.btn-primary.btn-android:hover {
+  background: #22ad76;
+  box-shadow: 0 8px 30px rgba(28,155,104,0.4);
+}
+
 .download-note {
   margin-top: 20px;
   font-size: 12px;
   color: rgba(255,255,255,0.25);
+}
+
+.coming-soon-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.coming-soon-badge {
+  background: rgba(0,255,200,0.12);
+  color: var(--teal);
+  border: 1px solid rgba(0,255,200,0.25);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.coming-soon-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
 }
 
 /* =========================================================
